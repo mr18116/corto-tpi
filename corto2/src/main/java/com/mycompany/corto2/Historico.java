@@ -27,15 +27,15 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author fernando
  */
 @Entity
-@Table(name = "multa")
+@Table(name = "historico")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Multa.findAll", query = "SELECT m FROM Multa m"),
-    @NamedQuery(name = "Multa.findById", query = "SELECT m FROM Multa m WHERE m.id = :id"),
-    @NamedQuery(name = "Multa.findByEstado", query = "SELECT m FROM Multa m WHERE m.estado = :estado"),
-    @NamedQuery(name = "Multa.findByFechaFin", query = "SELECT m FROM Multa m WHERE m.fechaFin = :fechaFin"),
-    @NamedQuery(name = "Multa.findByFechaInicio", query = "SELECT m FROM Multa m WHERE m.fechaInicio = :fechaInicio")})
-public class Multa implements Serializable {
+    @NamedQuery(name = "Historico.findAll", query = "SELECT h FROM Historico h"),
+    @NamedQuery(name = "Historico.findById", query = "SELECT h FROM Historico h WHERE h.id = :id"),
+    @NamedQuery(name = "Historico.findByFechaDevolucion", query = "SELECT h FROM Historico h WHERE h.fechaDevolucion = :fechaDevolucion"),
+    @NamedQuery(name = "Historico.findByFechaDevolucionReal", query = "SELECT h FROM Historico h WHERE h.fechaDevolucionReal = :fechaDevolucionReal"),
+    @NamedQuery(name = "Historico.findByFechaPrestamo", query = "SELECT h FROM Historico h WHERE h.fechaPrestamo = :fechaPrestamo")})
+public class Historico implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -43,29 +43,27 @@ public class Multa implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Long id;
-    @Basic(optional = false)
-    @Column(name = "estado")
-    private String estado;
-    @Column(name = "fechaFin")
+    @Column(name = "fechaDevolucion")
     @Temporal(TemporalType.DATE)
-    private Date fechaFin;
-    @Column(name = "fechaInicio")
+    private Date fechaDevolucion;
+    @Column(name = "fechaDevolucionReal")
     @Temporal(TemporalType.DATE)
-    private Date fechaInicio;
+    private Date fechaDevolucionReal;
+    @Column(name = "fechaPrestamo")
+    @Temporal(TemporalType.DATE)
+    private Date fechaPrestamo;
     @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Usuario usuarioId;
+    @JoinColumn(name = "ejemplar_id", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Ejemplar ejemplarId;
 
-    public Multa() {
+    public Historico() {
     }
 
-    public Multa(Long id) {
+    public Historico(Long id) {
         this.id = id;
-    }
-
-    public Multa(Long id, String estado) {
-        this.id = id;
-        this.estado = estado;
     }
 
     public Long getId() {
@@ -76,28 +74,28 @@ public class Multa implements Serializable {
         this.id = id;
     }
 
-    public String getEstado() {
-        return estado;
+    public Date getFechaDevolucion() {
+        return fechaDevolucion;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setFechaDevolucion(Date fechaDevolucion) {
+        this.fechaDevolucion = fechaDevolucion;
     }
 
-    public Date getFechaFin() {
-        return fechaFin;
+    public Date getFechaDevolucionReal() {
+        return fechaDevolucionReal;
     }
 
-    public void setFechaFin(Date fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setFechaDevolucionReal(Date fechaDevolucionReal) {
+        this.fechaDevolucionReal = fechaDevolucionReal;
     }
 
-    public Date getFechaInicio() {
-        return fechaInicio;
+    public Date getFechaPrestamo() {
+        return fechaPrestamo;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setFechaPrestamo(Date fechaPrestamo) {
+        this.fechaPrestamo = fechaPrestamo;
     }
 
     public Usuario getUsuarioId() {
@@ -106,6 +104,14 @@ public class Multa implements Serializable {
 
     public void setUsuarioId(Usuario usuarioId) {
         this.usuarioId = usuarioId;
+    }
+
+    public Ejemplar getEjemplarId() {
+        return ejemplarId;
+    }
+
+    public void setEjemplarId(Ejemplar ejemplarId) {
+        this.ejemplarId = ejemplarId;
     }
 
     @Override
@@ -118,10 +124,10 @@ public class Multa implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Multa)) {
+        if (!(object instanceof Historico)) {
             return false;
         }
-        Multa other = (Multa) object;
+        Historico other = (Historico) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -130,7 +136,7 @@ public class Multa implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.corto2.Multa[ id=" + id + " ]";
+        return "com.mycompany.corto2.Historico[ id=" + id + " ]";
     }
     
 }

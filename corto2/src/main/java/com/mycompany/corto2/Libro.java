@@ -12,6 +12,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -24,53 +26,74 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author marti
+ * @author fernando
  */
 @Entity
 @Table(name = "libro")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Libro.findAll", query = "SELECT l FROM Libro l"),
-    @NamedQuery(name = "Libro.findByIsbn", query = "SELECT l FROM Libro l WHERE l.isbn = :isbn"),
-    @NamedQuery(name = "Libro.findByTitulo", query = "SELECT l FROM Libro l WHERE l.titulo = :titulo"),
+    @NamedQuery(name = "Libro.findById", query = "SELECT l FROM Libro l WHERE l.id = :id"),
     @NamedQuery(name = "Libro.findByAutor", query = "SELECT l FROM Libro l WHERE l.autor = :autor"),
-    @NamedQuery(name = "Libro.findByNumPag", query = "SELECT l FROM Libro l WHERE l.numPag = :numPag"),
-    @NamedQuery(name = "Libro.findByFechaAlta", query = "SELECT l FROM Libro l WHERE l.fechaAlta = :fechaAlta")})
+    @NamedQuery(name = "Libro.findByFechaAlta", query = "SELECT l FROM Libro l WHERE l.fechaAlta = :fechaAlta"),
+    @NamedQuery(name = "Libro.findByIsbn", query = "SELECT l FROM Libro l WHERE l.isbn = :isbn"),
+    @NamedQuery(name = "Libro.findByNumDisponibles", query = "SELECT l FROM Libro l WHERE l.numDisponibles = :numDisponibles"),
+    @NamedQuery(name = "Libro.findByNumPaginas", query = "SELECT l FROM Libro l WHERE l.numPaginas = :numPaginas"),
+    @NamedQuery(name = "Libro.findByTitulo", query = "SELECT l FROM Libro l WHERE l.titulo = :titulo")})
 public class Libro implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "isbn")
-    private String isbn;
-    @Basic(optional = false)
-    @Column(name = "titulo")
-    private String titulo;
-    @Basic(optional = false)
+    @Column(name = "id")
+    private Long id;
     @Column(name = "autor")
     private String autor;
-    @Basic(optional = false)
-    @Column(name = "num_pag")
-    private int numPag;
-    @Basic(optional = false)
-    @Column(name = "fecha_alta")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "fechaAlta")
+    @Temporal(TemporalType.DATE)
     private Date fechaAlta;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "isbn")
-    private List<Operacion> operacionList;
+    @Column(name = "isbn")
+    private String isbn;
+    @Column(name = "numDisponibles")
+    private Integer numDisponibles;
+    @Column(name = "numPaginas")
+    private Integer numPaginas;
+    @Column(name = "titulo")
+    private String titulo;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "libroId")
+    private List<Ejemplar> ejemplarList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "libroId")
+    private List<Reserva> reservaList;
 
     public Libro() {
     }
 
-    public Libro(String isbn) {
-        this.isbn = isbn;
+    public Libro(Long id) {
+        this.id = id;
     }
 
-    public Libro(String isbn, String titulo, String autor, int numPag, Date fechaAlta) {
-        this.isbn = isbn;
-        this.titulo = titulo;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
         this.autor = autor;
-        this.numPag = numPag;
+    }
+
+    public Date getFechaAlta() {
+        return fechaAlta;
+    }
+
+    public void setFechaAlta(Date fechaAlta) {
         this.fechaAlta = fechaAlta;
     }
 
@@ -82,6 +105,22 @@ public class Libro implements Serializable {
         this.isbn = isbn;
     }
 
+    public Integer getNumDisponibles() {
+        return numDisponibles;
+    }
+
+    public void setNumDisponibles(Integer numDisponibles) {
+        this.numDisponibles = numDisponibles;
+    }
+
+    public Integer getNumPaginas() {
+        return numPaginas;
+    }
+
+    public void setNumPaginas(Integer numPaginas) {
+        this.numPaginas = numPaginas;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -90,43 +129,28 @@ public class Libro implements Serializable {
         this.titulo = titulo;
     }
 
-    public String getAutor() {
-        return autor;
+    @XmlTransient
+    public List<Ejemplar> getEjemplarList() {
+        return ejemplarList;
     }
 
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-
-    public int getNumPag() {
-        return numPag;
-    }
-
-    public void setNumPag(int numPag) {
-        this.numPag = numPag;
-    }
-
-    public Date getFechaAlta() {
-        return fechaAlta;
-    }
-
-    public void setFechaAlta(Date fechaAlta) {
-        this.fechaAlta = fechaAlta;
+    public void setEjemplarList(List<Ejemplar> ejemplarList) {
+        this.ejemplarList = ejemplarList;
     }
 
     @XmlTransient
-    public List<Operacion> getOperacionList() {
-        return operacionList;
+    public List<Reserva> getReservaList() {
+        return reservaList;
     }
 
-    public void setOperacionList(List<Operacion> operacionList) {
-        this.operacionList = operacionList;
+    public void setReservaList(List<Reserva> reservaList) {
+        this.reservaList = reservaList;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (isbn != null ? isbn.hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
@@ -137,7 +161,7 @@ public class Libro implements Serializable {
             return false;
         }
         Libro other = (Libro) object;
-        if ((this.isbn == null && other.isbn != null) || (this.isbn != null && !this.isbn.equals(other.isbn))) {
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -145,7 +169,7 @@ public class Libro implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.corto2.Libro[ isbn=" + isbn + " ]";
+        return "com.mycompany.corto2.Libro[ id=" + id + " ]";
     }
     
 }

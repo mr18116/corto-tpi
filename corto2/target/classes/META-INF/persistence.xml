@@ -6,11 +6,15 @@
     <class>com.mycompany.corto2.Operacion</class>
     <class>com.mycompany.corto2.Usuario</class>
     <class>com.mycompany.corto2.Multa</class>
+    <class>com.mycompany.corto2.Bibliotecario</class>
+    <class>com.mycompany.corto2.Ejemplar</class>
+    <class>com.mycompany.corto2.Reserva</class>
+    <class>com.mycompany.corto2.Historico</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/corto?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="clave"/>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
     </properties>
   </persistence-unit>
