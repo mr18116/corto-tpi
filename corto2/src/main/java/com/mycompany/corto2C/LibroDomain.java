@@ -1,3 +1,5 @@
+package com.mycompany.corto2C;
+
 import com.mycompany.corto2C.DomainObject;
 import com.mycompany.corto2C.EjemplarDomain;
 import com.mycompany.corto2C.ReservaDomain;
@@ -34,9 +36,7 @@ public class LibroDomain extends DomainObject {
         this.fechaAlta = fechaAlta;
         this.numDisponibles = numDisponibles;
     }
-    
-    
-    
+
     public String getIsbn() {
     return isbn;
     }

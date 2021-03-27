@@ -10,5 +10,10 @@ package com.mycompany.corto2C;
  * @author zarco
  */
 public class EjemplarDomain {
+
+    public EjemplarDomain() {
+    }
+
+ 
     
 }
