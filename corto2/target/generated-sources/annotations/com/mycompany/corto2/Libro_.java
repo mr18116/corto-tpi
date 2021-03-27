@@ -1,21 +1,25 @@
 package com.mycompany.corto2;
 
-import com.mycompany.corto2.Operacion;
+import com.mycompany.corto2.Ejemplar;
+import com.mycompany.corto2.Reserva;
 import java.util.Date;
 import javax.annotation.Generated;
 import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-03-26T23:18:24")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-03-27T16:23:51")
 @StaticMetamodel(Libro.class)
 public class Libro_ { 
 
+    public static volatile ListAttribute<Libro, Ejemplar> ejemplarList;
     public static volatile SingularAttribute<Libro, Date> fechaAlta;
-    public static volatile ListAttribute<Libro, Operacion> operacionList;
+    public static volatile ListAttribute<Libro, Reserva> reservaList;
     public static volatile SingularAttribute<Libro, String> isbn;
-    public static volatile SingularAttribute<Libro, Integer> numPag;
     public static volatile SingularAttribute<Libro, String> titulo;
+    public static volatile SingularAttribute<Libro, Integer> numDisponibles;
+    public static volatile SingularAttribute<Libro, Long> id;
+    public static volatile SingularAttribute<Libro, Integer> numPaginas;
     public static volatile SingularAttribute<Libro, String> autor;
 
 }

@@ -27,15 +27,16 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author noe
  */
 @Entity
-@Table(name = "multa")
+@Table(name = "reserva")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Multa.findAll", query = "SELECT m FROM Multa m"),
-    @NamedQuery(name = "Multa.findById", query = "SELECT m FROM Multa m WHERE m.id = :id"),
-    @NamedQuery(name = "Multa.findByEstado", query = "SELECT m FROM Multa m WHERE m.estado = :estado"),
-    @NamedQuery(name = "Multa.findByFechaFin", query = "SELECT m FROM Multa m WHERE m.fechaFin = :fechaFin"),
-    @NamedQuery(name = "Multa.findByFechaInicio", query = "SELECT m FROM Multa m WHERE m.fechaInicio = :fechaInicio")})
-public class Multa implements Serializable {
+    @NamedQuery(name = "Reserva.findAll", query = "SELECT r FROM Reserva r"),
+    @NamedQuery(name = "Reserva.findById", query = "SELECT r FROM Reserva r WHERE r.id = :id"),
+    @NamedQuery(name = "Reserva.findByEstado", query = "SELECT r FROM Reserva r WHERE r.estado = :estado"),
+    @NamedQuery(name = "Reserva.findByFecha", query = "SELECT r FROM Reserva r WHERE r.fecha = :fecha"),
+    @NamedQuery(name = "Reserva.findByFechaFin", query = "SELECT r FROM Reserva r WHERE r.fechaFin = :fechaFin"),
+    @NamedQuery(name = "Reserva.findByTipoFinal", query = "SELECT r FROM Reserva r WHERE r.tipoFinal = :tipoFinal")})
+public class Reserva implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -46,24 +47,29 @@ public class Multa implements Serializable {
     @Basic(optional = false)
     @Column(name = "estado")
     private String estado;
+    @Column(name = "fecha")
+    @Temporal(TemporalType.DATE)
+    private Date fecha;
     @Column(name = "fechaFin")
     @Temporal(TemporalType.DATE)
     private Date fechaFin;
-    @Column(name = "fechaInicio")
-    @Temporal(TemporalType.DATE)
-    private Date fechaInicio;
+    @Column(name = "tipoFinal")
+    private String tipoFinal;
+    @JoinColumn(name = "libro_id", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Libro libroId;
     @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Usuario usuarioId;
 
-    public Multa() {
+    public Reserva() {
     }
 
-    public Multa(Long id) {
+    public Reserva(Long id) {
         this.id = id;
     }
 
-    public Multa(Long id, String estado) {
+    public Reserva(Long id, String estado) {
         this.id = id;
         this.estado = estado;
     }
@@ -84,6 +90,14 @@ public class Multa implements Serializable {
         this.estado = estado;
     }
 
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
     public Date getFechaFin() {
         return fechaFin;
     }
@@ -92,12 +106,20 @@ public class Multa implements Serializable {
         this.fechaFin = fechaFin;
     }
 
-    public Date getFechaInicio() {
-        return fechaInicio;
+    public String getTipoFinal() {
+        return tipoFinal;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setTipoFinal(String tipoFinal) {
+        this.tipoFinal = tipoFinal;
+    }
+
+    public Libro getLibroId() {
+        return libroId;
+    }
+
+    public void setLibroId(Libro libroId) {
+        this.libroId = libroId;
     }
 
     public Usuario getUsuarioId() {
@@ -118,10 +140,10 @@ public class Multa implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Multa)) {
+        if (!(object instanceof Reserva)) {
             return false;
         }
-        Multa other = (Multa) object;
+        Reserva other = (Reserva) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -130,7 +152,7 @@ public class Multa implements Serializable {
 
     @Override
     public String toString() {
-        return "com.mycompany.corto2.Multa[ id=" + id + " ]";
+        return "com.mycompany.corto2.Reserva[ id=" + id + " ]";
     }
     
 }

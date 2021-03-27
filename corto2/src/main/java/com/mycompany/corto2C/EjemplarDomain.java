@@ -14,6 +14,9 @@ public class EjemplarDomain {
     public EjemplarDomain() {
     }
 
- 
+    public EjemplarDomain(LibroDomain libro1, String a) {
+        
+    }
+    
     
 }
