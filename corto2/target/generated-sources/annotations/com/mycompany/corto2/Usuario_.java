@@ -1,12 +1,14 @@
 package com.mycompany.corto2;
 
+import com.mycompany.corto2.Multa;
 import com.mycompany.corto2.Operacion;
 import javax.annotation.Generated;
+import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-03-26T20:47:59")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-03-26T23:18:24")
 @StaticMetamodel(Usuario.class)
 public class Usuario_ { 
 
@@ -18,6 +20,7 @@ public class Usuario_ {
     public static volatile SingularAttribute<Usuario, String> calle;
     public static volatile SingularAttribute<Usuario, String> login;
     public static volatile SingularAttribute<Usuario, String> nombre;
+    public static volatile CollectionAttribute<Usuario, Multa> multaCollection;
     public static volatile SingularAttribute<Usuario, String> password;
     public static volatile ListAttribute<Usuario, Operacion> operacionList;
     public static volatile SingularAttribute<Usuario, String> ciudad;

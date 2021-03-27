@@ -1,6 +1,16 @@
 com\mycompany\corto2\Usuario.class
+com\mycompany\corto2C\Direccion.class
+com\mycompany\corto2C\PrestamoHistoricoDomain.class
 com\mycompany\corto2\Libro_.class
+com\mycompany\corto2C\ReservaDomain.class
+com\mycompany\corto2C\DomainObject.class
+com\mycompany\corto2C\MultaDomain.class
+com\mycompany\corto2C\EjemplarDomain.class
+com\mycompany\corto2C\BibliotecarioDomain.class
+com\mycompany\corto2\Multa_.class
 com\mycompany\corto2\Libro.class
+com\mycompany\corto2\Multa.class
 com\mycompany\corto2\Operacion_.class
 com\mycompany\corto2\Usuario_.class
+LibroDomain.class
 com\mycompany\corto2\Operacion.class
