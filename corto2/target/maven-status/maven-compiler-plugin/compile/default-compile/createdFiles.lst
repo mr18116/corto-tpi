@@ -1,43 +1,19 @@
-<<<<<<< HEAD
-com\mycompany\corto2\Usuario.class
-com\mycompany\corto2\Historico_.class
-com\mycompany\corto2\Reserva_.class
-com\mycompany\corto2\Libro_.class
-com\mycompany\corto2\Ejemplar_.class
-com\mycompany\corto2\Ejemplar.class
-com\mycompany\corto2\Bibliotecario_.class
-com\mycompany\corto2\Historico.class
-com\mycompany\corto2\Bibliotecario.class
-com\mycompany\corto2\Multa_.class
-com\mycompany\corto2\Libro.class
-com\mycompany\corto2\Reserva.class
-com\mycompany\corto2\controller\UsuarioController.class
-com\mycompany\corto2\Multa.class
-com\mycompany\corto2\Usuario_.class
-=======
 com/mycompany/corto2/Ejemplar.class
 com/mycompany/corto2/Usuario.class
-com/mycompany/corto2/Usuario_.class
-<<<<<<< HEAD
 com/mycompany/corto2/controller/BibliotecarioController.class
-=======
->>>>>>> 4a3235cc37d86b51805ea1da2459df98b153f5f1
-com/mycompany/corto2/Bibliotecario_.class
 com/mycompany/corto2/Ejemplar_.class
 com/mycompany/corto2/Reserva_.class
 com/mycompany/corto2/controller/EjemplaresController.class
-com/mycompany/corto2/Reserva.class
 com/mycompany/corto2/Historico_.class
-com/mycompany/corto2/Libro_.class
 com/mycompany/corto2/Historico.class
+com/mycompany/corto2/controller/UsuarioController.class
+com/mycompany/corto2/controller/HistoricoController.class
+com/mycompany/corto2/Libro.class
+com/mycompany/corto2/Usuario_.class
+com/mycompany/corto2/Bibliotecario_.class
+com/mycompany/corto2/Reserva.class
+com/mycompany/corto2/Libro_.class
 com/mycompany/corto2/Bibliotecario.class
 com/mycompany/corto2/controller/MultaController.class
 com/mycompany/corto2/Multa.class
 com/mycompany/corto2/Multa_.class
-com/mycompany/corto2/controller/UsuarioController.class
-<<<<<<< HEAD
-com/mycompany/corto2/controller/HistoricoController.class
-=======
->>>>>>> 4a3235cc37d86b51805ea1da2459df98b153f5f1
-com/mycompany/corto2/Libro.class
->>>>>>> 5799fa7629b27d0531afb8fcae20e72272b0c0ed

@@ -1,16 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/BibliotecarioControllerTest.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/UsuarioControllerTest.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/MultaControllerTest.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/HistoricoControllerTest.java
-=======
-/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto/controller/UsuarioControllerTest.java
->>>>>>> 4a3235cc37d86b51805ea1da2459df98b153f5f1
-=======
-C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\test\java\com\mycompany\corto\controller\UsuarioControllerTest.java
-=======
-/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/UsuarioControllerTest.java
-/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/EjemplaresControllerTest.java
->>>>>>> 5799fa7629b27d0531afb8fcae20e72272b0c0ed
->>>>>>> 1eb13053b9dafb2e9082a0dec3e64a8831e4070f
+/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/EjemplaresControllerTest.java
+/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/MultaControllerTest.java
+/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/UsuarioControllerTest.java
+/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/LibroControllerTest.java
+/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/HistoricoControllerTest.java
+/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/BibliotecarioControllerTest.java
+/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/ReservasControllerTest.java
