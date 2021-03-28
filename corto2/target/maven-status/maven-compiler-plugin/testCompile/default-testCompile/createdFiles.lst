@@ -1,1 +1,4 @@
-com/mycompany/corto2C/LibroDomainTest.class
+com/mycompany/corto2/controller/BibliotecarioControllerTest.class
+com/mycompany/corto2/controller/MultaControllerTest.class
+com/mycompany/corto2/controller/UsuarioControllerTest.class
+com/mycompany/corto2/controller/HistoricoControllerTest.class

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.corto.controller;
+package com.mycompany.corto2.controller;
 
 import com.mycompany.corto2.controller.UsuarioController;
 import com.mycompany.corto2.Usuario;
