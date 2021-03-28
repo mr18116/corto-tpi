@@ -1,8 +1,9 @@
-/home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Bibliotecario.java
-/home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Ejemplar.java
-/home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Libro.java
-/home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/UsuarioController.java
-/home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Multa.java
-/home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Historico.java
-/home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Reserva.java
-/home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Usuario.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Libro.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/EjemplaresController.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Multa.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/UsuarioController.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Historico.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Ejemplar.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Usuario.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Bibliotecario.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Reserva.java

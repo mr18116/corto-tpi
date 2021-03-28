@@ -4,6 +4,7 @@ com/mycompany/corto2/Usuario_.class
 com/mycompany/corto2/Bibliotecario_.class
 com/mycompany/corto2/Ejemplar_.class
 com/mycompany/corto2/Reserva_.class
+com/mycompany/corto2/controller/EjemplaresController.class
 com/mycompany/corto2/Reserva.class
 com/mycompany/corto2/Historico_.class
 com/mycompany/corto2/Libro_.class
