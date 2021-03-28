@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/UsuarioController.java
 /home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/MultaController.java
 /home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/HistoricoController.java
@@ -20,3 +21,24 @@
 /home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Reserva.java
 /home/fernando/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Usuario.java
 >>>>>>> 4a3235cc37d86b51805ea1da2459df98b153f5f1
+=======
+C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\main\java\com\mycompany\corto2\Libro.java
+C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\main\java\com\mycompany\corto2\Reserva.java
+C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\main\java\com\mycompany\corto2\Usuario.java
+C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\main\java\com\mycompany\corto2\Ejemplar.java
+C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\main\java\com\mycompany\corto2\Historico.java
+C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\main\java\com\mycompany\corto2\controller\UsuarioController.java
+C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\main\java\com\mycompany\corto2\Multa.java
+C:\Users\harol\Desktop\CortodeTPI\corto-tpi\corto2\src\main\java\com\mycompany\corto2\Bibliotecario.java
+=======
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Libro.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/EjemplaresController.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Multa.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/UsuarioController.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Historico.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Ejemplar.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Usuario.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Bibliotecario.java
+/home/dany/MateriasCicloVI/TPI/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Reserva.java
+>>>>>>> 5799fa7629b27d0531afb8fcae20e72272b0c0ed
+>>>>>>> 1eb13053b9dafb2e9082a0dec3e64a8831e4070f

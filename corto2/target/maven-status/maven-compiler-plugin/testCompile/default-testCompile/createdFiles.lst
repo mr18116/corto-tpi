@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 com/mycompany/corto2/controller/BibliotecarioControllerTest.class
 com/mycompany/corto2/controller/MultaControllerTest.class
 com/mycompany/corto2/controller/UsuarioControllerTest.class
@@ -6,3 +7,10 @@ com/mycompany/corto2/controller/HistoricoControllerTest.class
 =======
 com/mycompany/corto/controller/UsuarioControllerTest.class
 >>>>>>> 4a3235cc37d86b51805ea1da2459df98b153f5f1
+=======
+com\mycompany\corto\controller\UsuarioControllerTest.class
+=======
+com/mycompany/corto2/controller/UsuarioControllerTest.class
+com/mycompany/corto2/controller/EjemplaresControllerTest.class
+>>>>>>> 5799fa7629b27d0531afb8fcae20e72272b0c0ed
+>>>>>>> 1eb13053b9dafb2e9082a0dec3e64a8831e4070f
