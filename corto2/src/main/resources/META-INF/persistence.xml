@@ -11,11 +11,7 @@
     <class>com.mycompany.corto2.Reserva</class>
     <class>com.mycompany.corto2.Historico</class>
     <properties>
-<<<<<<< HEAD
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca?zeroDateTimeBehavior=convertToNull"/>
-=======
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/biblioteca"/>
->>>>>>> 2045016c0390a63371752c9081ff04513dcef79c
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="clave"/>
