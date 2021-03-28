@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/BibliotecarioControllerTest.java
 /home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/UsuarioControllerTest.java
 /home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/MultaControllerTest.java
 /home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto-tpi/corto2/src/test/java/com/mycompany/corto2/controller/HistoricoControllerTest.java
+=======
+/home/fernando/TPI/corto-tpi/corto2/src/test/java/com/mycompany/corto/controller/UsuarioControllerTest.java
+>>>>>>> 4a3235cc37d86b51805ea1da2459df98b153f5f1

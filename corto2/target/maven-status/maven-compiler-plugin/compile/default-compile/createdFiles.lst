@@ -1,7 +1,10 @@
 com/mycompany/corto2/Ejemplar.class
 com/mycompany/corto2/Usuario.class
 com/mycompany/corto2/Usuario_.class
+<<<<<<< HEAD
 com/mycompany/corto2/controller/BibliotecarioController.class
+=======
+>>>>>>> 4a3235cc37d86b51805ea1da2459df98b153f5f1
 com/mycompany/corto2/Bibliotecario_.class
 com/mycompany/corto2/Ejemplar_.class
 com/mycompany/corto2/Reserva_.class
@@ -14,5 +17,8 @@ com/mycompany/corto2/controller/MultaController.class
 com/mycompany/corto2/Multa.class
 com/mycompany/corto2/Multa_.class
 com/mycompany/corto2/controller/UsuarioController.class
+<<<<<<< HEAD
 com/mycompany/corto2/controller/HistoricoController.class
+=======
+>>>>>>> 4a3235cc37d86b51805ea1da2459df98b153f5f1
 com/mycompany/corto2/Libro.class
