@@ -7,6 +7,12 @@ package com.mycompany.corto2.controller;
 
 import com.mycompany.corto2.Bibliotecario;
 
+import com.mycompany.corto2.Libro;
+import java.util.ArrayList;
+import com.mycompany.corto2.list.LibrosList;
+import java.util.Date;
+import java.util.List;
+
 /**
  *
  * @author noe
@@ -21,6 +27,10 @@ public class BibliotecarioController {
         bib.setNif(nif);
         
         return bib;
+    }
+    
+    public List<Libro> ConsultarLibros(){
+        return new LibrosList().getLibros();
     }
     
 }
