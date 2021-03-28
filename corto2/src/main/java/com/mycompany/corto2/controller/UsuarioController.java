@@ -7,13 +7,15 @@ package com.mycompany.corto2.controller;
 
 import com.mycompany.corto2.Libro;
 import com.mycompany.corto2.Usuario;
+import java.util.Collections;
+import java.util.List;
 
 /**
  *
  * @author fernando
  */
 public class UsuarioController {
-    
+      
     public Usuario crearUsuario(String nombre, String apellido1, String apellido2, String email, String login, String password,
             String tipo, String estado, String calle, String ciudad, String piso, Integer numero, String codigoPostal, String tutor, String departamento){
         Usuario usuario = new Usuario();
@@ -39,5 +41,12 @@ public class UsuarioController {
         return usuario;
     }
     
-    
+    public List<Libro> consultarLibrosYEjemplares(Usuario usuario){
+        if (usuario.getId() != null){
+            return null;
+        }else {
+            return Collections.emptyList();
+        }
+    }
+ 
 }
