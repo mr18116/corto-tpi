@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 com\mycompany\corto2\Usuario.class
 com\mycompany\corto2\Historico_.class
 com\mycompany\corto2\Reserva_.class
@@ -13,3 +14,21 @@ com\mycompany\corto2\Reserva.class
 com\mycompany\corto2\controller\UsuarioController.class
 com\mycompany\corto2\Multa.class
 com\mycompany\corto2\Usuario_.class
+=======
+com/mycompany/corto2/Ejemplar.class
+com/mycompany/corto2/Usuario.class
+com/mycompany/corto2/Usuario_.class
+com/mycompany/corto2/Bibliotecario_.class
+com/mycompany/corto2/Ejemplar_.class
+com/mycompany/corto2/Reserva_.class
+com/mycompany/corto2/controller/EjemplaresController.class
+com/mycompany/corto2/Reserva.class
+com/mycompany/corto2/Historico_.class
+com/mycompany/corto2/Libro_.class
+com/mycompany/corto2/Historico.class
+com/mycompany/corto2/Bibliotecario.class
+com/mycompany/corto2/Multa.class
+com/mycompany/corto2/Multa_.class
+com/mycompany/corto2/controller/UsuarioController.class
+com/mycompany/corto2/Libro.class
+>>>>>>> 5799fa7629b27d0531afb8fcae20e72272b0c0ed
