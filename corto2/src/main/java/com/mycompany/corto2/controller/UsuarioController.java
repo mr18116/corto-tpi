@@ -62,5 +62,14 @@ public class UsuarioController {
             return Collections.emptyList();
         }
     }
+    
+    public List<Ejemplar> consultarTodosEjemplares(){
+        EjemplaresList ejemplares = new EjemplaresList();        
+        return ejemplares.getEjemplares();
+    }
  
+    public List<Libro> consultarTodosLibros(){
+        LibrosList libros = new LibrosList();
+        return libros.getLibros();
+    }
 }

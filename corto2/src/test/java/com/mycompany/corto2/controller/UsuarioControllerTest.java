@@ -115,4 +115,21 @@ public class UsuarioControllerTest {
         
         assertEquals(obtenido, ejemplares.getEjemplares());
     }
+    
+    @Test
+    public void testConsultarTodosLibros(){
+        System.out.println("ConsultarTodosLibros");
+        LibrosList librosEsperados = new LibrosList();        
+        UsuarioController usuario = new UsuarioController();        
+        assertEquals(librosEsperados.getLibros(), usuario.consultarTodosLibros());        
+    }
+    
+    @Test
+    public void testConsultarTodosEjemplares(){
+        System.out.println("ConsultarTodosLibros");
+       EjemplaresList ejemplaresEsperados = new EjemplaresList();
+        UsuarioController usuario = new UsuarioController();        
+        assertEquals(ejemplaresEsperados.getEjemplares(),usuario.consultarTodosEjemplares());        
+    }
+    
 }
