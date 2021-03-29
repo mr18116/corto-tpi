@@ -28,7 +28,7 @@ public class EjemplaresList {
         ejemplar1.setObservaciones("nuevo");
         ejemplar1.setLibroId(new LibrosList().getLibros().get(0));
         ejemplar1.setUsuarioId(new UsuariosList().getUsuarios().get(0));
-        ejemplar1.setId(Long.parseLong("1"));
+        ejemplar1.setId(new Long(1));
         ejemplares.add(ejemplar1);
         
         return ejemplares;

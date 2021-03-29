@@ -20,7 +20,7 @@ public class HistoricosList {
        List<Historico> historicos = new ArrayList<>();
        
        Historico historico1 = new Historico();
-       historico1.setId(Long.parseLong("1"));
+       historico1.setId(new Long(1));
        historico1.setEjemplarId(new EjemplaresList().getEjemplares().get(0));
        historico1.setUsuarioId(new UsuariosList().getUsuarios().get(0));
        historico1.setFechaPrestamo(new Date(1, 10, 2020));

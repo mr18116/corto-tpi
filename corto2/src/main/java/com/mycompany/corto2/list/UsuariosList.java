@@ -34,7 +34,7 @@ public class UsuariosList {
         usuario1.setTipo("alumno");
         usuario1.setTutor("Pedro");
         usuario1.setDepartamento("");
-        usuario1.setId(Long.parseLong("1"));
+        usuario1.setId(new Long(1));
         usuarios.add(usuario1);
         
         return usuarios;
