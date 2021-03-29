@@ -5,8 +5,12 @@
  */
 package com.mycompany.corto2.controller;
 
+import com.mycompany.corto2.Ejemplar;
 import com.mycompany.corto2.Libro;
 import com.mycompany.corto2.Usuario;
+import com.mycompany.corto2.list.EjemplaresList;
+import com.mycompany.corto2.list.LibrosList;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -41,9 +45,19 @@ public class UsuarioController {
         return usuario;
     }
     
-    public List<Libro> consultarLibrosYEjemplares(Usuario usuario){
+    public List<Ejemplar> consultarEjemplares(Usuario usuario){
         if (usuario.getId() != null){
-            return null;
+            Long uid = usuario.getId();
+            EjemplaresList ejemplares = new EjemplaresList();
+            ejemplares.getEjemplares();
+            List<Ejemplar> uEjemplares = new ArrayList<>();
+            for(int i=0 ; i < ejemplares.getEjemplares().size() ; i++ ){
+                if(ejemplares.getEjemplares().get(i).getUsuarioId().getId() == uid){
+                    uEjemplares.add(ejemplares.getEjemplares().get(i));
+                }
+            }
+            
+            return uEjemplares;
         }else {
             return Collections.emptyList();
         }

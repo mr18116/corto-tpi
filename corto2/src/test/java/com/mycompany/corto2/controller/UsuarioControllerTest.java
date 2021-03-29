@@ -5,7 +5,13 @@
  */
 package com.mycompany.corto2.controller;
 
+import com.mycompany.corto2.Ejemplar;
 import com.mycompany.corto2.Usuario;
+import com.mycompany.corto2.list.EjemplaresList;
+import com.mycompany.corto2.list.LibrosList;
+import com.mycompany.corto2.list.UsuariosList;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -16,14 +22,14 @@ import static org.junit.Assert.*;
  * @author fernando
  */
 public class UsuarioControllerTest {
-    
+
     public UsuarioControllerTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
@@ -34,7 +40,7 @@ public class UsuarioControllerTest {
     @Test
     public void testCrearUsuario() {
         System.out.println("crearUsuario");
-        
+
         String nombre = "Juan";
         String apellido1 = "Perez";
         String apellido2 = "Perez";
@@ -47,12 +53,12 @@ public class UsuarioControllerTest {
         String piso = "floor";
         Integer numero = 79490000;
         String codigoPostal = "0000";
-        
+
         // Para usurio alumno
         String tipo = "alumno";
         String tutor = "Pedro";
         String departamento = "";
-        
+
         UsuarioController alumno = new UsuarioController();
         Usuario result = alumno.crearUsuario(nombre, apellido1, apellido2, email, login, password, tipo, estado, calle, ciudad, piso, numero, codigoPostal, tutor, departamento);
         assertEquals(nombre, result.getNombre());
@@ -67,15 +73,15 @@ public class UsuarioControllerTest {
         assertEquals(ciudad, result.getCiudad());
         assertEquals(numero, result.getNumero());
         assertEquals(codigoPostal, result.getCodigoPostal());
-        
+
         assertEquals(tipo, result.getTipo());
         assertEquals(tutor, result.getTutor());
-        
+
         // Para usuario profesor
         tipo = "profesor";
         tutor = "";
         departamento = "letras";
-        
+
         UsuarioController profesor = new UsuarioController();
         result = profesor.crearUsuario(nombre, apellido1, apellido2, email, login, password, tipo, estado, calle, ciudad, piso, numero, codigoPostal, tutor, departamento);
         assertEquals(nombre, result.getNombre());
@@ -90,9 +96,23 @@ public class UsuarioControllerTest {
         assertEquals(ciudad, result.getCiudad());
         assertEquals(numero, result.getNumero());
         assertEquals(codigoPostal, result.getCodigoPostal());
-        
+
         assertEquals(tipo, result.getTipo());
         assertEquals(departamento, result.getDepartamento());
     }
-    
+
+    @Test
+    public void testConsultarEjemplares() {
+        System.out.println("ConsultarEjemplares");
+        UsuariosList user = new UsuariosList();
+        EjemplaresList ejemplares = new EjemplaresList();
+        Usuario usuario = user.getUsuarios().get(0);
+        
+        List<Ejemplar> obtenido = new ArrayList<Ejemplar>();
+        
+        UsuarioController userController = new UsuarioController();
+        obtenido = userController.consultarEjemplares(usuario);
+        
+        assertEquals(obtenido, ejemplares.getEjemplares());
+    }
 }
