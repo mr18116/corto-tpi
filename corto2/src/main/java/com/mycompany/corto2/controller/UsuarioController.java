@@ -9,10 +9,14 @@ import com.mycompany.corto2.Ejemplar;
 import com.mycompany.corto2.Libro;
 import com.mycompany.corto2.Usuario;
 import com.mycompany.corto2.list.EjemplaresList;
+import com.mycompany.corto2.list.HistoricosList;
 import com.mycompany.corto2.list.LibrosList;
+import com.mycompany.corto2.list.ReservasList;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -51,16 +55,36 @@ public class UsuarioController {
             EjemplaresList ejemplares = new EjemplaresList();
             ejemplares.getEjemplares();
             List<Ejemplar> uEjemplares = new ArrayList<>();
-            for(int i=0 ; i < ejemplares.getEjemplares().size() ; i++ ){
-                if(ejemplares.getEjemplares().get(i).getUsuarioId().getId() == uid){
-                    uEjemplares.add(ejemplares.getEjemplares().get(i));
-                }
-            }
+            
+            new EjemplaresList().getEjemplares().stream().filter((e) -> (e.getUsuarioId().getId().equals(uid)))
+                .forEachOrdered((e) -> uEjemplares.add(e));
             
             return uEjemplares;
         }else {
             return Collections.emptyList();
         }
+    }
+    
+    public Map<Libro, List<Ejemplar>> consultarLibros(Usuario usuario){
+        Map<Libro, List<Ejemplar>> libros = new HashMap<>();
+        new EjemplaresList().getEjemplares().stream().filter((e) -> (e.getUsuarioId().equals(usuario)))
+                .forEachOrdered((e) -> {
+                    if(!libros.isEmpty()){
+                        libros.keySet().forEach((l)->{
+                            if(l.equals(e.getLibroId())){
+                                libros.get(l).add(e);
+                            }else{
+                                libros.put(e.getLibroId(),new ArrayList<>());
+                                libros.get(e.getLibroId()).add(e);
+                            }
+                        });
+                    }else{
+                        libros.put(e.getLibroId(),new ArrayList<>());
+                        libros.get(e.getLibroId()).add(e);
+                    }
+                });
+        
+        return libros;
     }
     
     public List<Ejemplar> consultarTodosEjemplares(){
@@ -72,4 +96,25 @@ public class UsuarioController {
         LibrosList libros = new LibrosList();
         return libros.getLibros();
     }
+    
+    public List<Ejemplar> historicoPrestamosEjemplar(Usuario user){
+        HistoricosList historico = new HistoricosList();
+        List<Ejemplar> ejemplaresUsuario = new ArrayList<>();
+        
+        new HistoricosList().getHistoricos().stream().filter((h) -> (h.getUsuarioId().equals(user)))
+                .forEachOrdered((h) -> ejemplaresUsuario.add(h.getEjemplarId()) );
+        return ejemplaresUsuario;
+    }
+    
+    public List<Libro> reservasLibros(Usuario user){
+        HistoricosList historico = new HistoricosList();
+        List<Libro> librosUsuario = new ArrayList<>();
+        
+        new ReservasList().getReservas().stream().filter((r) -> (r.getUsuarioId().equals(user)))
+                .forEachOrdered((r) -> librosUsuario.add(r.getLibroId()));
+        return librosUsuario;
+    }
+    
+    
+    
 }
