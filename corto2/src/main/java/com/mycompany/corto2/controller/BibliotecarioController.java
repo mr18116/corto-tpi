@@ -127,5 +127,25 @@ public class BibliotecarioController {
         
         return reservados;
     }
+    
+    public List<Ejemplar> ejemplaresDisponibles(Libro libro){
+        List<Ejemplar> disponibles = new ArrayList<>();
+        
+        new EjemplaresList().getEjemplares().stream().filter((e) -> (e.getUsuarioId() == null || e.getUsuarioId().equals(""))).forEachOrdered((e) -> {
+            disponibles.add(e);
+        });
+        
+        return disponibles;
+    }
+    
+    public Ejemplar devolverEjemplar(Ejemplar ejemplar){
+        ejemplar.setUsuarioId(null);
+        return ejemplar;
+    }
+    
+    public Ejemplar prestarEjemplar(Ejemplar ejemplar, Usuario usuario){
+        ejemplar.setUsuarioId(usuario);
+        return ejemplar;
+    }
 
 }

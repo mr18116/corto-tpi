@@ -224,5 +224,53 @@ public class BibliotecarioControllerTest {
         assertEquals(expResult, result);
         System.out.println(result);
     }
+
+    /**
+     * Test of ejemplaresDisponibles method, of class BibliotecarioController.
+     */
+    @Test
+    public void testEjemplaresDisponibles() {
+        System.out.println("ejemplaresDisponibles");
+        Libro libro = new LibrosList().getLibros().get(0);
+        BibliotecarioController instance = new BibliotecarioController();
+        List<Ejemplar> expResult = new ArrayList<>();
+        expResult.add(new EjemplaresList().getEjemplares().get(1));
+        List<Ejemplar> result = instance.ejemplaresDisponibles(libro);
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of devolverEjemplar method, of class BibliotecarioController.
+     */
+    @Test
+    public void testDevolverEjemplar() {
+        System.out.println("devolverEjemplar");
+        Ejemplar ejemplar = new EjemplaresList().getEjemplares().get(0);
+        BibliotecarioController instance = new BibliotecarioController();
+        Ejemplar result = instance.devolverEjemplar(ejemplar);
+        Ejemplar expResult = ejemplar;
+        expResult.setUsuarioId(null);
+        
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of prestarEjemplar method, of class BibliotecarioController.
+     */
+    @Test
+    public void testPrestarEjemplar() {
+        System.out.println("prestarEjemplar");
+        Ejemplar ejemplar = new EjemplaresList().getEjemplares().get(1);
+        Usuario usuario = new UsuariosList().getUsuarios().get(0);
+        BibliotecarioController instance = new BibliotecarioController();
+        Ejemplar result = instance.prestarEjemplar(ejemplar, usuario);
+        Ejemplar expResult = ejemplar;
+        expResult.setUsuarioId(usuario);
+        
+        assertEquals(expResult, result);
+
+    }
     
 }
