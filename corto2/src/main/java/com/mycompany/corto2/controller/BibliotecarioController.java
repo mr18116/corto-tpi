@@ -9,12 +9,15 @@ import com.mycompany.corto2.Bibliotecario;
 import com.mycompany.corto2.Ejemplar;
 
 import com.mycompany.corto2.Libro;
+import com.mycompany.corto2.Multa;
 import com.mycompany.corto2.Usuario;
 import com.mycompany.corto2.list.EjemplaresList;
 import com.mycompany.corto2.list.HistoricosList;
 import java.util.ArrayList;
 import com.mycompany.corto2.list.LibrosList;
+import com.mycompany.corto2.list.MultasList;
 import com.mycompany.corto2.list.ReservasList;
+import com.mycompany.corto2.list.UsuariosList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -146,6 +149,33 @@ public class BibliotecarioController {
     public Ejemplar prestarEjemplar(Ejemplar ejemplar, Usuario usuario){
         ejemplar.setUsuarioId(usuario);
         return ejemplar;
+    }
+    
+    public List<Usuario> consultarUsuarios(){
+        return new UsuariosList().getUsuarios();
+    }
+    
+    public Map<Usuario, Ejemplar> entregarPrestamo(Usuario usuario, Ejemplar ejemplar){
+        Map<Usuario, Ejemplar> prestamo = new HashMap<>();
+        
+        if (ejemplar.getUsuarioId().equals(usuario)) {
+            prestamo.put(usuario, ejemplar);
+        }
+        
+        return prestamo;
+    }
+    
+    public String multadoUsuario(Usuario usuario){
+        return usuario.getEstado();
+    }
+    
+    public List<Multa> multasUsuario(Usuario usuario){
+        List<Multa> multas = new ArrayList<>();
+        new MultasList().getMultas().stream().filter((m) -> (m.getUsuarioId().equals(usuario))).forEach((m) -> {
+            multas.add(m);
+        });
+        
+        return multas;
     }
 
 }

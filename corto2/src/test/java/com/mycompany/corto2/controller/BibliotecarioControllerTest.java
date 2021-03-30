@@ -8,9 +8,11 @@ package com.mycompany.corto2.controller;
 import com.mycompany.corto2.Bibliotecario;
 import com.mycompany.corto2.Ejemplar;
 import com.mycompany.corto2.Libro;
+import com.mycompany.corto2.Multa;
 import com.mycompany.corto2.Usuario;
 import com.mycompany.corto2.list.EjemplaresList;
 import com.mycompany.corto2.list.LibrosList;
+import com.mycompany.corto2.list.MultasList;
 import com.mycompany.corto2.list.UsuariosList;
 import java.util.ArrayList;
 import java.util.Date;
@@ -269,6 +271,64 @@ public class BibliotecarioControllerTest {
         Ejemplar expResult = ejemplar;
         expResult.setUsuarioId(usuario);
         
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of consultarUsuarios method, of class BibliotecarioController.
+     */
+    @Test
+    public void testConsultarUsuarios() {
+        System.out.println("consultarUsuarios");
+        BibliotecarioController instance = new BibliotecarioController();
+        List<Usuario> expResult = new UsuariosList().getUsuarios();
+        List<Usuario> result = instance.consultarUsuarios();
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of entregarPrestamo method, of class BibliotecarioController.
+     */
+    @Test
+    public void testEntregarPrestamo() {
+        System.out.println("entregarPrestamo");
+        Usuario usuario = new UsuariosList().getUsuarios().get(0);
+        Ejemplar ejemplar = new EjemplaresList().getEjemplares().get(0);
+        BibliotecarioController instance = new BibliotecarioController();
+        Map<Usuario, Ejemplar> expResult = new HashMap<>();
+        expResult.put(usuario, ejemplar);
+        Map<Usuario, Ejemplar> result = instance.entregarPrestamo(usuario, ejemplar);
+        assertEquals(expResult, result);
+    }
+
+    /**
+     * Test of multadoUsuario method, of class BibliotecarioController.
+     */
+    @Test
+    public void testMultadoUsuario() {
+        System.out.println("multadoUsuario");
+        Usuario usuario = new UsuariosList().getUsuarios().get(1);
+        BibliotecarioController instance = new BibliotecarioController();
+        String expResult = "MULTADO";
+        String result = instance.multadoUsuario(usuario);
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of multasUsuario method, of class BibliotecarioController.
+     */
+    @Test
+    public void testMultasUsuario() {
+        System.out.println("multasUsuario");
+        Usuario usuario = new UsuariosList().getUsuarios().get(1);
+        BibliotecarioController instance = new BibliotecarioController();
+        List<Multa> expResult = new ArrayList<>();
+        new MultasList().getMultas().stream().filter((m) -> (m.getUsuarioId().equals(usuario))).forEach((m) -> {
+            expResult.add(m);
+        });
+        List<Multa> result = instance.multasUsuario(usuario);
         assertEquals(expResult, result);
 
     }

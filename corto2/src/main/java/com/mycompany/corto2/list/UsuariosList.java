@@ -5,6 +5,7 @@
  */
 package com.mycompany.corto2.list;
 
+import com.mycompany.corto2.Multa;
 import com.mycompany.corto2.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,25 @@ public class UsuariosList {
         usuario1.setDepartamento("");
         usuario1.setId(new Long(1));
         usuarios.add(usuario1);
+        
+        Usuario usuario2 = new Usuario();
+        usuario2.setNombre("Pedro");
+        usuario2.setApellido1("Paz");
+        usuario2.setApellido2("Perez");
+        usuario2.setEmail("pp@outlook.com");
+        usuario2.setLogin("9ty0023");
+        usuario2.setPassword("pass");
+        usuario2.setEstado("MULTADO");
+        usuario2.setCalle("street");
+        usuario2.setCiudad("city");
+        usuario2.setPiso("floor");
+        usuario2.setNumero(79490000);
+        usuario2.setCodigoPostal("0000");
+        usuario2.setTipo("alumno");
+        usuario2.setTutor("Raul");
+        usuario2.setDepartamento("");
+        usuario2.setId(new Long(2));
+        usuarios.add(usuario2);
         
         return usuarios;
     }
