@@ -1,17 +1,19 @@
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/BibliotecarioController.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Bibliotecario.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Historico.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/list/LibrosList.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Ejemplar.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/ReservasController.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/LibroController.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Multa.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/list/UsuariosList.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Libro.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/list/EjemplaresList.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/UsuarioController.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/MultaController.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Usuario.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/Reserva.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/HistoricoController.java
-/home/noe/Documentos/ciclo 1 - 2021/tpi/corto-tpi/corto2/src/main/java/com/mycompany/corto2/controller/EjemplaresController.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\controller\LibroController.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\list\EjemplaresList.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\list\LibrosList.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\Libro.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\list\HistoricosList.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\Usuario.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\list\UsuariosList.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\Ejemplar.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\list\ReservasList.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\controller\HistoricoController.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\controller\BibliotecarioController.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\Multa.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\controller\ReservasController.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\Historico.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\Bibliotecario.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\controller\EjemplaresController.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\controller\MultaController.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\controller\UsuarioController.java
+C:\Users\marti\OneDrive\Documentos\NetBeansProjects\Corto2-tpi\corto2\src\main\java\com\mycompany\corto2\Reserva.java

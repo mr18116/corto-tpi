@@ -6,12 +6,16 @@
 package com.mycompany.corto2.controller;
 
 import com.mycompany.corto2.Ejemplar;
+import com.mycompany.corto2.Libro;
 import com.mycompany.corto2.Usuario;
 import com.mycompany.corto2.list.EjemplaresList;
 import com.mycompany.corto2.list.LibrosList;
+import com.mycompany.corto2.list.ReservasList;
 import com.mycompany.corto2.list.UsuariosList;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -112,7 +116,7 @@ public class UsuarioControllerTest {
         
         UsuarioController userController = new UsuarioController();
         obtenido = userController.consultarEjemplares(usuario);
-        
+        System.out.println(obtenido);
         assertEquals(obtenido, ejemplares.getEjemplares());
     }
     
@@ -131,5 +135,51 @@ public class UsuarioControllerTest {
         UsuarioController usuario = new UsuarioController();        
         assertEquals(ejemplaresEsperados.getEjemplares(),usuario.consultarTodosEjemplares());        
     }
+    
+    @Test
+    public void testHistoricoPrestamosEjemplar(){
+        System.out.println("HistoricoPrestamos");
+        List<Ejemplar> ejemplarEsperado = new EjemplaresList().getEjemplares();
+        
+        UsuarioController usuario = new UsuarioController();     
+        Usuario user = new UsuariosList().getUsuarios().get(0);
+        
+        
+        assertEquals(ejemplarEsperado, usuario.historicoPrestamosEjemplar(user));        
+    }
+    
+    @Test
+    public void testReservaLibros(){
+        System.out.println("ReservaLibros");
+        Libro LibroEsperado = new ReservasList().getReservas().get(0).getLibroId();
+        
+        List<Libro> librosEsperados = new ArrayList<>();
+        librosEsperados.add(LibroEsperado);
+        
+        UsuarioController usuario = new UsuarioController();     
+        Usuario user = new UsuariosList().getUsuarios().get(0);
+        
+        
+        assertEquals(librosEsperados, usuario.reservasLibros(user));        
+    }
+    
+    @Test
+    public void testConsultarLibros(){
+        System.out.println("ConsultarLibros");
+        Map<Libro, List<Ejemplar>> esperado = new HashMap<>();
+        List<Ejemplar> ejemplares = new ArrayList<>();
+        ejemplares.add(new EjemplaresList().getEjemplares().get(0));
+        Libro libro = new LibrosList().getLibros().get(0);
+        esperado.put(libro, ejemplares);
+        
+        UsuarioController usuario = new UsuarioController();
+        
+        Usuario user = new UsuariosList().getUsuarios().get(0);
+        
+        assertEquals(esperado, usuario.consultarLibros(user));
+        
+        
+    }
+    
     
 }
