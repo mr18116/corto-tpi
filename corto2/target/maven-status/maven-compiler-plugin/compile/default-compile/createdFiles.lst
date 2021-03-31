@@ -11,7 +11,6 @@ com\mycompany\corto2\Libro.class
 com\mycompany\corto2\Reserva.class
 com\mycompany\corto2\controller\UsuarioController.class
 com\mycompany\corto2\controller\ReservasController.class
-.netbeans_automatic_build
 com\mycompany\corto2\controller\LibroController.class
 com\mycompany\corto2\Usuario_.class
 com\mycompany\corto2\Historico_.class

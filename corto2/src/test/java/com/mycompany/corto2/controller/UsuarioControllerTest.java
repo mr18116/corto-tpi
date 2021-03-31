@@ -113,7 +113,7 @@ public class UsuarioControllerTest {
         EjemplaresList ejemplares = new EjemplaresList();
         Usuario usuario = user.getUsuarios().get(0);
 
-        List<Ejemplar> obtenido = new ArrayList<Ejemplar>();
+        List<Ejemplar> obtenido = new ArrayList<>();
 
         UsuarioController userController = new UsuarioController();
         obtenido = userController.consultarEjemplares(usuario);
@@ -140,12 +140,13 @@ public class UsuarioControllerTest {
     @Test
     public void testHistoricoPrestamosEjemplar() {
         System.out.println("HistoricoPrestamos");
-        List<Ejemplar> ejemplarEsperado = new EjemplaresList().getEjemplares();
-
+        Ejemplar ejemplarEsperado = new EjemplaresList().getEjemplares().get(0);
+        List<Ejemplar> esperadoList = new ArrayList<>();
+        esperadoList.add(ejemplarEsperado);
         UsuarioController usuario = new UsuarioController();
         Usuario user = new UsuariosList().getUsuarios().get(0);
 
-        assertEquals(ejemplarEsperado, usuario.historicoPrestamosEjemplar(user));
+        assertEquals(esperadoList, usuario.historicoPrestamosEjemplar(user));
     }
 
     @Test
