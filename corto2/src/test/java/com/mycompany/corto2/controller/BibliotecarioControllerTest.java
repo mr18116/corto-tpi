@@ -7,12 +7,16 @@ package com.mycompany.corto2.controller;
 
 import com.mycompany.corto2.Bibliotecario;
 import com.mycompany.corto2.Ejemplar;
+import com.mycompany.corto2.Historico;
 import com.mycompany.corto2.Libro;
 import com.mycompany.corto2.Multa;
+import com.mycompany.corto2.Reserva;
 import com.mycompany.corto2.Usuario;
 import com.mycompany.corto2.list.EjemplaresList;
+import com.mycompany.corto2.list.HistoricosList;
 import com.mycompany.corto2.list.LibrosList;
 import com.mycompany.corto2.list.MultasList;
+import com.mycompany.corto2.list.ReservasList;
 import com.mycompany.corto2.list.UsuariosList;
 import java.util.ArrayList;
 import java.util.Date;
@@ -329,6 +333,40 @@ public class BibliotecarioControllerTest {
             expResult.add(m);
         });
         List<Multa> result = instance.multasUsuario(usuario);
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of prestamosRealizados method, of class BibliotecarioController.
+     */
+    @Test
+    public void testPrestamosRealizados() {
+        System.out.println("prestamosRealizados");
+        BibliotecarioController instance = new BibliotecarioController();
+        Map<Usuario, List<Historico>> expResult = new HashMap<>();
+        Usuario usuario = new UsuariosList().getUsuarios().get(0);
+        List<Historico> prestamos = new ArrayList<>();
+        prestamos.add(new HistoricosList().getHistoricos().get(0));
+        expResult.put(usuario, prestamos);
+        Map<Usuario, List<Historico>> result = instance.prestamosRealizados();
+        assertEquals(expResult, result);
+
+    }
+
+    /**
+     * Test of reservasRealizadas method, of class BibliotecarioController.
+     */
+    @Test
+    public void testReservasRealizadas() {
+        System.out.println("reservasRealizadas");
+        BibliotecarioController instance = new BibliotecarioController();
+        Map<Usuario, List<Reserva>> expResult = new HashMap<>();
+        Usuario usuario = new UsuariosList().getUsuarios().get(0);
+        List<Reserva> reservas = new ArrayList<>();
+        reservas.add(new ReservasList().getReservas().get(0));
+        expResult.put(usuario, reservas);
+        Map<Usuario, List<Reserva>> result = instance.reservasRealizadas();
         assertEquals(expResult, result);
 
     }

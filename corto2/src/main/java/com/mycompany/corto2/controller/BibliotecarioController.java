@@ -7,7 +7,7 @@ package com.mycompany.corto2.controller;
 
 import com.mycompany.corto2.Bibliotecario;
 import com.mycompany.corto2.Ejemplar;
-
+import com.mycompany.corto2.Historico;
 import com.mycompany.corto2.Libro;
 import com.mycompany.corto2.Multa;
 import com.mycompany.corto2.Usuario;
@@ -22,6 +22,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import com.mycompany.corto2.Reserva;
 
 /**
  *
@@ -176,6 +177,40 @@ public class BibliotecarioController {
         });
         
         return multas;
+    }
+    
+    public Map<Usuario, List<Historico>> prestamosRealizados(){
+        Map<Usuario, List<Historico>> prestamos = new HashMap<>();
+        
+        new UsuariosList().getUsuarios().forEach((u) -> {
+            new HistoricosList().getHistoricos().stream().filter((h) -> (h.getUsuarioId().equals(u))).forEachOrdered((h) -> {
+                if(prestamos.containsKey(u)){
+                    prestamos.get(u).add(h);
+                } else {
+                    prestamos.put(u, new ArrayList<>());
+                    prestamos.get(u).add(h);
+                }
+            });
+        });
+        
+        return prestamos;
+    }
+    
+    public Map<Usuario, List<Reserva>> reservasRealizadas(){
+        Map<Usuario, List<Reserva>> reservas = new HashMap<>();
+        String s = null;
+        new UsuariosList().getUsuarios().forEach((u) -> {
+            new ReservasList().getReservas().stream().filter((r) -> (r.getUsuarioId().equals(u))).forEachOrdered((r) -> {
+                if(reservas.containsKey(u)){
+                    reservas.get(u).add(r);
+                } else {
+                    reservas.put(u, new ArrayList<>());
+                    reservas.get(u).add(r);
+                }
+            });
+        });
+        
+        return reservas;
     }
 
 }
