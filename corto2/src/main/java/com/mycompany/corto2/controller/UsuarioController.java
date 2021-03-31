@@ -57,7 +57,7 @@ public class UsuarioController {
             ejemplares.getEjemplares();
             List<Ejemplar> uEjemplares = new ArrayList<>();
 
-            new EjemplaresList().getEjemplares().stream().filter((e) -> (e.getUsuarioId().getId().equals(uid)))
+            new EjemplaresList().getEjemplares().stream().filter((e) -> (e.getUsuarioId() != null && e.getUsuarioId().getId().equals(uid)))
                     .forEachOrdered((e) -> uEjemplares.add(e));
             return uEjemplares;
         } else {
@@ -67,7 +67,7 @@ public class UsuarioController {
 
     public Map<Libro, List<Ejemplar>> consultarLibros(Usuario usuario) {
         Map<Libro, List<Ejemplar>> libros = new HashMap<>();
-        new EjemplaresList().getEjemplares().stream().filter((e) -> (e.getUsuarioId().equals(usuario)))
+        new EjemplaresList().getEjemplares().stream().filter((e) -> (e.getUsuarioId() != null && e.getUsuarioId().equals(usuario)))
                 .forEachOrdered((e) -> {
                     if (!libros.isEmpty()) {
                         libros.keySet().forEach((l) -> {

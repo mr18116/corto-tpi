@@ -110,7 +110,9 @@ public class UsuarioControllerTest {
     public void testConsultarEjemplares() {
         System.out.println("ConsultarEjemplares");
         UsuariosList user = new UsuariosList();
-        EjemplaresList ejemplares = new EjemplaresList();
+        List<Ejemplar> ejemplares = new ArrayList<>();
+        ejemplares.add(new EjemplaresList().getEjemplares().get(0));
+        
         Usuario usuario = user.getUsuarios().get(0);
 
         List<Ejemplar> obtenido = new ArrayList<>();
@@ -118,7 +120,7 @@ public class UsuarioControllerTest {
         UsuarioController userController = new UsuarioController();
         obtenido = userController.consultarEjemplares(usuario);
         System.out.println(obtenido);
-        assertEquals(obtenido, ejemplares.getEjemplares());
+        assertEquals(obtenido, ejemplares);
     }
 
     @Test
