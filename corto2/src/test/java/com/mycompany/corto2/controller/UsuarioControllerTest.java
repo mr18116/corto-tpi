@@ -7,6 +7,7 @@ package com.mycompany.corto2.controller;
 
 import com.mycompany.corto2.Ejemplar;
 import com.mycompany.corto2.Libro;
+import com.mycompany.corto2.Reserva;
 import com.mycompany.corto2.Usuario;
 import com.mycompany.corto2.list.EjemplaresList;
 import com.mycompany.corto2.list.LibrosList;
@@ -109,77 +110,92 @@ public class UsuarioControllerTest {
     public void testConsultarEjemplares() {
         System.out.println("ConsultarEjemplares");
         UsuariosList user = new UsuariosList();
-        EjemplaresList ejemplares = new EjemplaresList();
+        List<Ejemplar> ejemplares = new ArrayList<>();
+        ejemplares.add(new EjemplaresList().getEjemplares().get(0));
+        
         Usuario usuario = user.getUsuarios().get(0);
-        
-        List<Ejemplar> obtenido = new ArrayList<Ejemplar>();
-        
+
+        List<Ejemplar> obtenido = new ArrayList<>();
+
         UsuarioController userController = new UsuarioController();
         obtenido = userController.consultarEjemplares(usuario);
         System.out.println(obtenido);
-        assertEquals(obtenido, ejemplares.getEjemplares());
+        assertEquals(obtenido, ejemplares);
     }
-    
+
     @Test
-    public void testConsultarTodosLibros(){
+    public void testConsultarTodosLibros() {
         System.out.println("ConsultarTodosLibros");
-        LibrosList librosEsperados = new LibrosList();        
-        UsuarioController usuario = new UsuarioController();        
-        assertEquals(librosEsperados.getLibros(), usuario.consultarTodosLibros());        
+        LibrosList librosEsperados = new LibrosList();
+        UsuarioController usuario = new UsuarioController();
+        assertEquals(librosEsperados.getLibros(), usuario.consultarTodosLibros());
     }
-    
+
     @Test
-    public void testConsultarTodosEjemplares(){
+    public void testConsultarTodosEjemplares() {
         System.out.println("ConsultarTodosLibros");
-       EjemplaresList ejemplaresEsperados = new EjemplaresList();
-        UsuarioController usuario = new UsuarioController();        
-        assertEquals(ejemplaresEsperados.getEjemplares(),usuario.consultarTodosEjemplares());        
+        EjemplaresList ejemplaresEsperados = new EjemplaresList();
+        UsuarioController usuario = new UsuarioController();
+        assertEquals(ejemplaresEsperados.getEjemplares(), usuario.consultarTodosEjemplares());
     }
-    
+
     @Test
-    public void testHistoricoPrestamosEjemplar(){
+    public void testHistoricoPrestamosEjemplar() {
         System.out.println("HistoricoPrestamos");
         List<Ejemplar> ejemplarEsperado = new EjemplaresList().getEjemplares();
-        
-        UsuarioController usuario = new UsuarioController();     
+
+        UsuarioController usuario = new UsuarioController();
         Usuario user = new UsuariosList().getUsuarios().get(0);
-        
-        
-        assertEquals(ejemplarEsperado, usuario.historicoPrestamosEjemplar(user));        
+
+        assertEquals(ejemplarEsperado, usuario.historicoPrestamosEjemplar(user));
     }
-    
+
     @Test
-    public void testReservaLibros(){
+    public void testReservaLibros() {
         System.out.println("ReservaLibros");
         Libro LibroEsperado = new ReservasList().getReservas().get(0).getLibroId();
-        
         List<Libro> librosEsperados = new ArrayList<>();
         librosEsperados.add(LibroEsperado);
-        
-        UsuarioController usuario = new UsuarioController();     
+        UsuarioController usuario = new UsuarioController();
         Usuario user = new UsuariosList().getUsuarios().get(0);
-        
-        
-        assertEquals(librosEsperados, usuario.reservasLibros(user));        
+        assertEquals(librosEsperados, usuario.reservasLibros(user));
     }
-    
+
     @Test
-    public void testConsultarLibros(){
+    public void testConsultarLibros() {
         System.out.println("ConsultarLibros");
         Map<Libro, List<Ejemplar>> esperado = new HashMap<>();
         List<Ejemplar> ejemplares = new ArrayList<>();
         ejemplares.add(new EjemplaresList().getEjemplares().get(0));
         Libro libro = new LibrosList().getLibros().get(0);
         esperado.put(libro, ejemplares);
-        
+
         UsuarioController usuario = new UsuarioController();
-        
+
         Usuario user = new UsuariosList().getUsuarios().get(0);
         
         assertEquals(esperado, usuario.consultarLibros(user));
-        
-        
+
     }
-    
-    
+
+    @Test
+    public void testAnularReserva() {
+        System.out.println("AnularReserva");
+        Reserva reserva = new ReservasList().getReservas().get(0);
+        Reserva esperado = new ReservasList().getReservas().get(0);
+        esperado.setUsuarioId(null);
+        Reserva obtenido = new UsuarioController().anularReserva(reserva);
+        assertEquals(esperado, obtenido);
+    }
+
+    @Test
+    public void testPrestarLibro() {
+        System.out.println("PrestarLibro");
+        Usuario usuario = new UsuariosList().getUsuarios().get(0);
+        Ejemplar esperado = new EjemplaresList().getEjemplares().get(0);        
+        Libro libro = new LibrosList().getLibros().get(0);        
+        Ejemplar obtenido = new UsuarioController().prestarLibro(libro, usuario);
+        assertEquals(esperado, obtenido);
+    }
+
 }
