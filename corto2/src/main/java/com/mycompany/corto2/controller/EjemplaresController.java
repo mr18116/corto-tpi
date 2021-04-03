@@ -13,7 +13,7 @@ import java.util.Date;
  * @author dany
  */
 public class EjemplaresController {
-    public Ejemplar EjemplaresController(Date fechaAdquisicion,Date fechaDevolucion,Date fechaPrestamo,String idEjemplar,String localizacion,String observaciones){
+    public Ejemplar crearEjemplar(Date fechaAdquisicion,Date fechaDevolucion,Date fechaPrestamo,String idEjemplar,String localizacion,String observaciones){
         Ejemplar ejem=new Ejemplar();
         ejem.setFechaAdquisicion(fechaAdquisicion);
         ejem.setFechaDevolucion(fechaDevolucion);

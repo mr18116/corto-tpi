@@ -34,14 +34,14 @@ public class MultaControllerTest {
      * Test of MultaController method, of class MultaController.
      */
     @Test
-    public void testMultaController() {
+    public void testCrearMulta() {
         System.out.println("MultaController");
         String estado = "ACTIVO";
         Date fechaFin = new Date(1, 12, 2021);
         Date fechaInicio = new Date(1, 11, 2021);
         Usuario uID = new Usuario();
         MultaController instance = new MultaController();
-        Multa result = instance.MultaController(estado, fechaFin, fechaInicio, uID);
+        Multa result = instance.crearMulta(estado, fechaFin, fechaInicio, uID);
         assertEquals(estado, result.getEstado());
         assertEquals(fechaFin, result.getFechaFin());
         assertEquals(fechaInicio, result.getFechaInicio());

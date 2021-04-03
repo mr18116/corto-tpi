@@ -33,7 +33,7 @@ public class EjemplaresControllerTest {
      * Test of EjemplaresController method, of class EjemplaresController.
      */
     @Test
-    public void testEjemplaresController() {
+    public void testCrearEjemplar() {
       System.out.println("EjemplaresController");
         Date fechaAdquisicion = new Date(1, 10, 2223);
         Date fechaDevolucion = new Date(1, 10, 2220);
@@ -50,7 +50,7 @@ public class EjemplaresControllerTest {
         expResult.setLocalizacion(localizacion);
         expResult.setObservaciones(observaciones);
 
-        Ejemplar result = instance.EjemplaresController(fechaAdquisicion, fechaDevolucion, fechaPrestamo, idEjemplar, localizacion, observaciones);
+        Ejemplar result = instance.crearEjemplar(fechaAdquisicion, fechaDevolucion, fechaPrestamo, idEjemplar, localizacion, observaciones);
         assertEquals(fechaAdquisicion, result.getFechaAdquisicion());
         assertEquals(fechaDevolucion, result.getFechaDevolucion());
         assertEquals(fechaPrestamo, result.getFechaPrestamo());

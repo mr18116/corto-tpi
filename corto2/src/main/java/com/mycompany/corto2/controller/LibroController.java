@@ -14,7 +14,7 @@ import java.util.Date;
  */
 public class LibroController {
     
-    public Libro LibroController(Long id, String isbn, String titulo, String autor, Integer numPaginas, Date fechaAlta, Integer numDisponibles){
+    public Libro crearLibro(Long id, String isbn, String titulo, String autor, Integer numPaginas, Date fechaAlta, Integer numDisponibles){
         Libro libro = new Libro();
         libro.setId(id);
         libro.setIsbn(isbn);

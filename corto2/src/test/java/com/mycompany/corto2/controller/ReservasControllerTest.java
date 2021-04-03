@@ -35,7 +35,7 @@ public class ReservasControllerTest {
      * Test of ReservaController method, of class ReservasController.
      */
     @Test
-    public void testReservaController() {
+    public void testCrearReserva() {
         System.out.println("ReservaController");
         Long id = Long.parseLong("1");;
         Usuario usuarioId = new Usuario();
@@ -46,7 +46,7 @@ public class ReservasControllerTest {
         String tipoFinal = "cancelada";
         
         ReservasController instance = new ReservasController();
-        Reserva result = instance.ReservaController(id, usuarioId, libroId, fechaReserva, fechadeFinalizacion, estado, tipoFinal);
+        Reserva result = instance.crearReserva(id, usuarioId, libroId, fechaReserva, fechadeFinalizacion, estado, tipoFinal);
         assertEquals(id, result.getId());
         assertEquals(usuarioId, result.getUsuarioId());
         assertEquals(libroId, result.getLibroId());

@@ -15,7 +15,7 @@ import java.util.Date;
  */
 public class MultaController {
     
-    public Multa MultaController(String estado, Date fechaFin, Date fechaInicio, Usuario uID){
+    public Multa crearMulta(String estado, Date fechaFin, Date fechaInicio, Usuario uID){
         Multa mul = new Multa();
         mul.setEstado(estado);
         mul.setFechaFin(fechaFin);

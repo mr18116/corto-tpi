@@ -16,7 +16,7 @@ import java.util.Date;
  */
 public class ReservasController {
         
-    public Reserva ReservaController(Long id, Usuario usuarioId, Libro libroId, Date fechaReserva, Date fechadeFinalizacion, String estado, String tipoFinal){
+    public Reserva crearReserva(Long id, Usuario usuarioId, Libro libroId, Date fechaReserva, Date fechadeFinalizacion, String estado, String tipoFinal){
         Reserva reserva = new Reserva();
         reserva.setId(id);
         reserva.setUsuarioId(usuarioId);

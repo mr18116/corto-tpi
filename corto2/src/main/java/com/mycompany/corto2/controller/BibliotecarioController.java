@@ -30,7 +30,7 @@ import com.mycompany.corto2.Reserva;
  */
 public class BibliotecarioController {
 
-    public Bibliotecario BibliotecaController(String email, String login, String password, String nif) {
+    public Bibliotecario crearBibliotecario(String email, String login, String password, String nif) {
         Bibliotecario bib = new Bibliotecario();
         bib.setEmail(email);
         bib.setLogin(login);

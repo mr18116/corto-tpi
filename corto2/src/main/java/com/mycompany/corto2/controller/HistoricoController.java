@@ -15,7 +15,7 @@ import java.util.Date;
  * @author noe
  */
 public class HistoricoController {
-    public Historico HistoricoConHistorico(Date fechaDevolucion, Date fechaDevolucionReal, Date fechaPrestamo,
+    public Historico crearHistorico(Date fechaDevolucion, Date fechaDevolucionReal, Date fechaPrestamo,
             Usuario usuario_id, Ejemplar ejemplar_id){
         Historico his = new Historico();
         his.setFechaDevolucion(fechaDevolucion);

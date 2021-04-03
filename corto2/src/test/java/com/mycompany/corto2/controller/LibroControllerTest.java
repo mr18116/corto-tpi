@@ -33,7 +33,7 @@ public class LibroControllerTest {
      * Test of LibroController method, of class LibroController.
      */
     @Test
-    public void testLibroController() {
+    public void testCrearLibro() {
         System.out.println("LibroController");
         Long id = Long.parseLong("1");
         String isbn = "isbn";
@@ -44,7 +44,7 @@ public class LibroControllerTest {
         Integer numDisponibles = 5;
         
         LibroController instance = new LibroController();
-        Libro result = instance.LibroController(id, isbn, titulo, autor, numPaginas, fechaAlta, numDisponibles);
+        Libro result = instance.crearLibro(id, isbn, titulo, autor, numPaginas, fechaAlta, numDisponibles);
         assertEquals(id, result.getId());
         assertEquals(isbn, result.getIsbn());
         assertEquals(titulo, result.getTitulo());

@@ -49,14 +49,14 @@ public class BibliotecarioControllerTest {
      * Test of BibliotecaController method, of class BibliotecarioController.
      */
     @Test
-    public void testBibliotecaController() {
+    public void testCrearBibliotecario() {
         System.out.println("BibliotecaController");
         String email = "mail";
         String login = "login";
         String password = "pass";
         String nif = "nif";
         BibliotecarioController instance = new BibliotecarioController();
-        Bibliotecario result = instance.BibliotecaController(email, login, password, nif);
+        Bibliotecario result = instance.crearBibliotecario(email, login, password, nif);
         assertEquals(email, result.getEmail());
         assertEquals(login, result.getLogin());
         assertEquals(password, result.getPassword());

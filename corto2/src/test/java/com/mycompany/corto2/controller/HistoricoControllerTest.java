@@ -35,7 +35,7 @@ public class HistoricoControllerTest {
      * Test of HistoricoConHistorico method, of class HistoricoController.
      */
     @Test
-    public void testHistoricoConHistorico() {
+    public void testCrearHistorico() {
         System.out.println("HistoricoConHistorico");
         Date fechaDevolucion = new Date(31, 1, 2021);
         Date fechaDevolucionReal = new Date(15, 1, 2021);
@@ -43,7 +43,7 @@ public class HistoricoControllerTest {
         Usuario usuario_id = new Usuario();
         Ejemplar ejemplar_id = new Ejemplar();
         HistoricoController instance = new HistoricoController();
-        Historico result = instance.HistoricoConHistorico(fechaDevolucion, fechaDevolucionReal, fechaPrestamo, usuario_id, ejemplar_id);
+        Historico result = instance.crearHistorico(fechaDevolucion, fechaDevolucionReal, fechaPrestamo, usuario_id, ejemplar_id);
         assertEquals(fechaDevolucion, result.getFechaDevolucion());
         assertEquals(fechaDevolucionReal, result.getFechaDevolucionReal());
         assertEquals(fechaPrestamo, result.getFechaPrestamo());
